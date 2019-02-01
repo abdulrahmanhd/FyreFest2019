@@ -8,6 +8,15 @@ public class FyreAttendant {
     private String arrivalDate;
     private String specialRequests;
 
+    public FyreAttendant(String name, String address, String email, String arrivalDate, String specialRequests) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.arrivalDate = arrivalDate;
+        this.specialRequests = specialRequests;
+    }
+
+
     public String getName() {
         return name;
     }

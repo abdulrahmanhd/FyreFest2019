@@ -9,7 +9,13 @@ public class FyreFestDemo {
         Scanner textScanner = new Scanner(System.in);
         int userIntInput1;
         String userTextInput;
-        FyreAttendant attendant = new FyreAttendant();
+
+        String userNameInput;
+        String userAddressInput;
+        String userEmail;
+        String userArrivalDate;
+        String userSpecialRequests;
+
 
         System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: ");
         System.out.println("1. Current Registrant " +
@@ -21,9 +27,35 @@ public class FyreFestDemo {
         switch(userIntInput1) {
 
             case 1:
+                System.out.println("C1");
                 break;
+
             case 2:
+                System.out.println("Welcome to the first step of making your dreams come true:" +
+                                " \n Please enter your first and last name: ");
+
+                userNameInput = textScanner.nextLine();
+
+                System.out.println("Address: ");
+
+                userAddressInput = textScanner.nextLine();
+
+                System.out.println("Email: ");
+                userEmail = textScanner.nextLine();
+
+                System.out.println("Arrival Date: ");
+                userArrivalDate = textScanner.nextLine();
+
+                System.out.println("Special Requests: ");
+                userSpecialRequests = textScanner.nextLine();
+
+                FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userEmail, userArrivalDate, userSpecialRequests);
+
+                attendant.printDetails();
+
                 break;
+
+
             case 3:
                 break;
 
