@@ -16,6 +16,7 @@ public class FyreFestDemo {
         String userArrivalDate;
         String userSpecialRequests;
 
+        RegistrationInfo attendeesRegistration = new RegistrationInfo();
 
         System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: ");
         System.out.println("1. Current Registrant " +
@@ -52,6 +53,10 @@ public class FyreFestDemo {
                 FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userEmail, userArrivalDate, userSpecialRequests);
 
                 attendant.printDetails();
+                System.out.println("----------------------------------------------");
+                attendeesRegistration.attendeesRegistrationArray.add(attendant);
+
+                attendeesRegistration.seeAllAttendants();
 
                 break;
 
