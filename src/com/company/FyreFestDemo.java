@@ -17,60 +17,73 @@ public class FyreFestDemo {
         String userSpecialRequests;
 
         RegistrationInfo attendeesRegistration = new RegistrationInfo();
+        boolean again = false;
 
-        System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: ");
-        System.out.println("1. Current Registrant " +
-                "2. New Registrant" +
-                "3. Admin Access ");
+        do {
+            System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: ");
+            System.out.println("1. Current Registrant " +
+                    "2. New Registrant" +
+                    " 3. Admin Access ");
 
-        userIntInput1 = numScanner.nextInt();
+            userIntInput1 = numScanner.nextInt();
 
-        switch(userIntInput1) {
+            switch (userIntInput1) {
 
-            case 1:
-                System.out.println("C1");
-                break;
+                case 1:
+                    System.out.println("C1");
+                    break;
 
-            case 2:
-                System.out.println("Welcome to the first step of making your dreams come true:" +
-                                " \n Please enter your first and last name: ");
+                case 2:
+                    System.out.println("Welcome to the first step of making your dreams come true:" +
+                            " \n Please enter your first and last name: ");
 
-                userNameInput = textScanner.nextLine();
+                    userNameInput = textScanner.nextLine();
 
-                System.out.println("Address: ");
+                    System.out.println("Address: ");
 
-                userAddressInput = textScanner.nextLine();
+                    userAddressInput = textScanner.nextLine();
 
-                System.out.println("Email: ");
-                userEmail = textScanner.nextLine();
+                    System.out.println("Email: ");
+                    userEmail = textScanner.nextLine();
 
-                System.out.println("Arrival Date: ");
-                userArrivalDate = textScanner.nextLine();
+                    System.out.println("Arrival Date: ");
+                    userArrivalDate = textScanner.nextLine();
 
-                System.out.println("Special Requests: ");
-                userSpecialRequests = textScanner.nextLine();
+                    System.out.println("Special Requests: ");
+                    userSpecialRequests = textScanner.nextLine();
 
-                FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userEmail, userArrivalDate, userSpecialRequests);
+                    FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userEmail, userArrivalDate, userSpecialRequests);
 
-                attendant.printDetails();
-                System.out.println("----------------------------------------------");
-                attendeesRegistration.attendeesRegistrationArray.add(attendant);
+//              attendant.printDetails();
+                    System.out.println("----------------------------------------------");
+                    attendeesRegistration.attendeesRegistrationArray.add(attendant);
 
-                attendeesRegistration.seeAllAttendants();
+                    attendeesRegistration.seeAllAttendants();
 
-                break;
+                    break;
 
 
-            case 3:
-                break;
-
+                case 3:
+                    break;
 
 
                 default:
 
 
+            }
 
-        }
+            System.out.println("Would you like to add another person? 1. Yes 2. No");
+            userIntInput1 = numScanner.nextInt();
+
+            if (userIntInput1 == 1) {
+                again = true;
+    
+            } else {
+                again = false;
+            }
+
+        }   while(again);
+
 
     }
 }
