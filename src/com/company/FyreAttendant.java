@@ -50,6 +50,14 @@ public class FyreAttendant {
         this.address = address;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -82,7 +90,8 @@ public class FyreAttendant {
         System.out.println("Zip: " + zip);
         System.out.println("Arrival Date: " + arrivalDate);
         System.out.println("Special Request: " + specialRequests);
-        System.out.println(idNumber);
+        System.out.println("ID Number: " + idNumber);
+        System.out.println("\n");
     }
 
 

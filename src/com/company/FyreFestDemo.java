@@ -29,7 +29,9 @@ public class FyreFestDemo {
         Scanner scan = new Scanner(System.in);
         int userIndexInput;
         int adminMenu;
+        int search;
         String adminAccess;
+        String searchState;
 
         do {
             System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: \n");
@@ -77,20 +79,61 @@ public class FyreFestDemo {
 
                     FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userCityInput, userStateInput, userZipInput, userEmail, userArrivalDate, userSpecialRequests);
 
-//              attendant.printDetails();
-                    System.out.println("----------------------------------------------");
                     attendeesRegistration.attendeesRegistrationArray.add(attendant);
+//
+//                    attendeesRegistration.seeAllAttendants();
 
-                    attendeesRegistration.seeAllAttendants();
-
-                    System.out.println("Output from Search.java below:");
 
                     break;
 
 
                 case 3:
-                    admin.adminOptions();
+                    System.out.println("Please enter your admin password");
+                    adminAccess = textScanner.nextLine();
 
+                    if (adminAccess.equals("VillaLife") || adminAccess.equals("billy4eva") || adminAccess.equals("JaRule")){
+
+                        System.out.println("Welcome Billy, Andy, and team. What would you like to do? \n");
+                        System.out.println("Press [1] view all Registrants \n \n" +
+                                "Press [2] Look up attendee by ID or State \n \n" +
+                                "Press [3] Cancel an attendant's registration \n \n" +
+                                "Press [4] Assign VIP Access \n \n");
+
+                        adminMenu = numScanner.nextInt();
+
+                        switch (adminMenu) {
+
+                            case 1:
+                                admin.seeAllAttendants(attendeesRegistration);
+                                break;
+                            case 2:
+
+                                System.out.println("Would you like to search by: \n" +
+                                        "Press [1] ID Number \n" +
+                                        "Press [2] State ");
+                                search = numScanner.nextInt();
+
+                                if (search == 1) {
+                                    System.out.println("Please enter the ID number: ");
+                                    search = numScanner.nextInt();
+                                    fyreSearch.searchByID(attendeesRegistration,search);
+
+                                }else if(search == 2){
+                                    System.out.println("Please enter state abbreviation");
+                                  searchState   = textScanner.nextLine();
+                                  fyreSearch.searchByState(attendeesRegistration, searchState);
+                                }
+
+
+                                break;
+                            case 3:
+                                admin.deleteAttendant(attendeesRegistration);
+                                break;
+                            case 4:
+                                break;
+                        }
+
+                    }
 
 
 

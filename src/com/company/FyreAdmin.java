@@ -38,15 +38,14 @@ public class FyreAdmin {
 //            }
 //
 //        }
-//
-//
-//
-//    }
 
-    RegistrationInfo rI = new RegistrationInfo();
 
-    public void seeAllAttendants () {
-        rI.seeAllAttendants();
+
+    }
+
+
+    public void seeAllAttendants (RegistrationInfo myInfo) {
+        myInfo.seeAllAttendants();
 
     }
 
