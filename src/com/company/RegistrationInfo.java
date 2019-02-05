@@ -7,8 +7,12 @@ public class RegistrationInfo {
 
     List<FyreAttendant>attendeesRegistrationArray = new ArrayList();
 
+
+
+
     public void seeAllAttendants() {
         for(FyreAttendant allAttendees: attendeesRegistrationArray){
+//            System.out.println(attendeesRegistrationArray.get());
             allAttendees.printDetails();
 
         }

@@ -6,18 +6,33 @@ public class FyreAttendant {
 
     private String name;
     private String address;
+    private String city;
+    private String state;
+    private String zip;
     private String email;
     private String arrivalDate;
     private String specialRequests;
+    private double idNumber;
 
-    public FyreAttendant(String name, String address, String email, String arrivalDate, String specialRequests) {
+    public FyreAttendant(String name, String address, String city, String state, String zip  ,String email, String arrivalDate, String specialRequests) {
         this.name = name;
         this.address = address;
+        this.city =  city;
+        this.state = state;
+        this.zip = zip;
         this.email = email;
         this.arrivalDate = arrivalDate;
         this.specialRequests = specialRequests;
+        this.idNumber = Math.floor(Math.random() * 1000) + 1000000;
     }
 
+    public double getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(int idNumber) {
+        this.idNumber = idNumber;
+    }
 
     public String getName() {
         return name;
@@ -62,9 +77,12 @@ public class FyreAttendant {
     public void printDetails() {
         System.out.println("Name: " + name);
         System.out.println("Address: " + address);
-        System.out.println("Email: " + email);
+        System.out.println("City: " + city);
+        System.out.println("State: " + state);
+        System.out.println("Zip: " + zip);
         System.out.println("Arrival Date: " + arrivalDate);
         System.out.println("Special Request: " + specialRequests);
+        System.out.println(idNumber);
     }
 
 

@@ -12,11 +12,16 @@ public class FyreFestDemo {
 
         String userNameInput;
         String userAddressInput;
+        String userCityInput;
+        String userStateInput;
+        String userZipInput;
         String userEmail;
         String userArrivalDate;
         String userSpecialRequests;
+        double idSearch;
 
         RegistrationInfo attendeesRegistration = new RegistrationInfo();
+        Search fyreSearch = new Search();
         boolean again = false;
 
         do {
@@ -40,8 +45,16 @@ public class FyreFestDemo {
                     userNameInput = textScanner.nextLine();
 
                     System.out.println("Address: ");
-
                     userAddressInput = textScanner.nextLine();
+
+                    System.out.println("City: ");
+                    userCityInput = textScanner.nextLine();
+
+                    System.out.println("State: ");
+                    userStateInput = textScanner.nextLine();
+
+                    System.out.println("Zip: ");
+                    userZipInput = textScanner.nextLine();
 
                     System.out.println("Email: ");
                     userEmail = textScanner.nextLine();
@@ -52,7 +65,7 @@ public class FyreFestDemo {
                     System.out.println("Special Requests: ");
                     userSpecialRequests = textScanner.nextLine();
 
-                    FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userEmail, userArrivalDate, userSpecialRequests);
+                    FyreAttendant attendant = new FyreAttendant(userNameInput, userAddressInput, userCityInput, userStateInput, userZipInput, userEmail, userArrivalDate, userSpecialRequests);
 
 //              attendant.printDetails();
                     System.out.println("----------------------------------------------");
@@ -60,11 +73,24 @@ public class FyreFestDemo {
 
                     attendeesRegistration.seeAllAttendants();
 
+                    System.out.println("Output from Search.java below:");
+
+
+
+
                     break;
 
 
                 case 3:
+                    System.out.println("Enter Id number");
+                    idSearch = numScanner.nextDouble();
+
+                      fyreSearch.searchByID(attendeesRegistration, idSearch);
+
+
+
                     break;
+
 
 
                 default:
