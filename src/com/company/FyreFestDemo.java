@@ -21,21 +21,31 @@ public class FyreFestDemo {
         double idSearch;
 
         RegistrationInfo attendeesRegistration = new RegistrationInfo();
+        FyreAdmin admin = new FyreAdmin();
         Search fyreSearch = new Search();
         boolean again = false;
 
+        //Admin Stuff
+        Scanner scan = new Scanner(System.in);
+        int userIndexInput;
+        int adminMenu;
+        String adminAccess;
+
         do {
-            System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: ");
-            System.out.println("1. Current Registrant " +
-                    "2. New Registrant" +
-                    " 3. Admin Access ");
+            System.out.println("Welcome to Frye Fest Registration bruuuuuuh. Choose from the following option: \n");
+            System.out.println("Press [1] for registration status \n \n" +
+                    "Press [2] New Registrant \n \n" +
+                    "Press [3] Admin Access ");
 
             userIntInput1 = numScanner.nextInt();
 
             switch (userIntInput1) {
 
                 case 1:
-                    System.out.println("C1");
+                    System.out.println("Enter Id number");
+                    idSearch = numScanner.nextDouble();
+
+                    fyreSearch.searchByID(attendeesRegistration, idSearch);
                     break;
 
                 case 2:
@@ -75,19 +85,18 @@ public class FyreFestDemo {
 
                     System.out.println("Output from Search.java below:");
 
-
-
-
                     break;
 
 
                 case 3:
-                    System.out.println("Enter Id number");
-                    idSearch = numScanner.nextDouble();
-
-                      fyreSearch.searchByID(attendeesRegistration, idSearch);
+                    admin.adminOptions();
 
 
+
+
+                    break;
+                case 4:
+                    admin.deleteAttendant(attendeesRegistration);
 
                     break;
 
@@ -98,12 +107,12 @@ public class FyreFestDemo {
 
             }
 
-            System.out.println("Would you like to add another person? 1. Yes 2. No");
+            System.out.println("Would you like to start over? 1. Yes 2. No");
             userIntInput1 = numScanner.nextInt();
 
             if (userIntInput1 == 1) {
                 again = true;
-    
+
             } else {
                 again = false;
             }

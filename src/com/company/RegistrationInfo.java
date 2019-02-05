@@ -12,7 +12,6 @@ public class RegistrationInfo {
 
     public void seeAllAttendants() {
         for(FyreAttendant allAttendees: attendeesRegistrationArray){
-//            System.out.println(attendeesRegistrationArray.get());
             allAttendees.printDetails();
 
         }
