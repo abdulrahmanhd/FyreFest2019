@@ -32,15 +32,21 @@ public class Search {
 
 //                System.out.println("We Found YOur Info");
 //                attendant.printDetails();
-            }else if (!attendant.getState().equalsIgnoreCase(stateName)) {
-                 System.out.println("No one Registered in that State");
             }
 
         }
 
-        for (FyreAttendant foundByState: foundAttendant) {
-            System.out.println("Here is what we found: ");
-            foundByState.printDetails();
+
+        if (foundAttendant.isEmpty()) {
+            System.out.println("No one is registered in that state");
+        }else {
+            for (FyreAttendant foundByState: foundAttendant) {
+                System.out.println("Here is what we found: ");
+                foundByState.printDetails();
+            }
+
         }
+
+
     }
 }
